@@ -23,7 +23,7 @@ interface DadosKm {
 }
 
 // ⚙️ CONFIGURAÇÃO: Número do WhatsApp da 77 Car Service (DDI+DDD+Número)
-const WHATSAPP_77CAR = '5531993810753' // WhatsApp oficial 77 Car Service
+const WHATSAPP_77CAR = '5531993810753' // 📱 Anderson Martins — 77 Car Service
 
 // ============================================================
 // 💰 PACOTES DE SERVIÇO (Preços definidos pelo Anderson)
