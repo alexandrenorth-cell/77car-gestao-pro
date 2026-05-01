@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  * { @apply border-slate-800; }
+  body { @apply bg-[#020617] text-slate-100; }
+}
+@layer components {
+  .glass { @apply bg-slate-900/50 backdrop-blur-xl border border-slate-800/50; }
+  .glass-hover { @apply hover:bg-slate-900/80 hover:border-slate-700/50 transition-all duration-300; }
+  .card-77 { @apply bg-slate-900/70 border border-slate-800 rounded-2xl p-6 hover:border-blue-600/30 hover:shadow-lg hover:shadow-blue-600/5 transition-all duration-300; }
+  .btn-primary { @apply bg-gradient-to-r from-blue-700 to-blue-600 text-white px-6 py-3 rounded-xl font-bold text-sm uppercase tracking-wider hover:from-blue-600 hover:to-blue-500 transition-all duration-300 shadow-lg shadow-blue-600/20 hover:shadow-blue-600/40; }
+  .btn-wpp { @apply bg-gradient-to-r from-green-600 to-green-500 text-white px-6 py-3 rounded-xl font-bold text-sm uppercase tracking-wider hover:from-green-500 hover:to-green-400 transition-all duration-300 shadow-lg shadow-green-600/20; }
+  .input-77 { @apply w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/50 transition-all duration-200; }
+  .badge { @apply inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest; }
+  .badge-blue { @apply badge bg-blue-600/20 text-blue-400 border border-blue-500/30; }
+  .badge-green { @apply badge bg-green-600/20 text-green-400 border border-green-500/30; }
+  .badge-yellow { @apply badge bg-yellow-600/20 text-yellow-400 border border-yellow-500/30; }
+  .badge-red { @apply badge bg-red-600/20 text-red-400 border border-red-500/30; }
+}
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideIn { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+.animate-fade-up { animation: fadeUp 0.6s ease-out forwards; }
+.animate-slide-in { animation: slideIn 0.5s ease-out forwards; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { @apply bg-transparent; }
+::-webkit-scrollbar-thumb { @apply bg-slate-800 rounded-full hover:bg-slate-700; }
