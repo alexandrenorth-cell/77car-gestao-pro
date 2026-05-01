@@ -23,8 +23,7 @@ interface DadosKm {
 }
 
 // ⚙️ CONFIGURAÇÃO: Número do WhatsApp da 77 Car Service (DDI+DDD+Número)
-// ⚠️ ANDERSON: Quando tiver o número do celular extra, me fala que eu atualizo em 30s!
-const WHATSAPP_77CAR = '5511999999999' // PLACEHOLDER — AGUARDANDO NÚMERO OFICIAL
+const WHATSAPP_77CAR = '5531993810753' // WhatsApp oficial 77 Car Service
 
 // ============================================================
 // 💰 PACOTES DE SERVIÇO (Preços definidos pelo Anderson)
