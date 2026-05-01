@@ -9,8 +9,9 @@ import Templates from '@/components/Templates'
 import Config from '@/components/Config'
 import RegistroServico from '@/components/RegistroServico'
 import AprovacoesLista from '@/components/AprovacoesLista'
+import Manuais from '@/components/Manuais'
 
-type Page = 'dashboard' | 'crm' | 'os' | 'estoque' | 'templates' | 'config' | 'registro' | 'aprovacoes'
+type Page = 'dashboard' | 'crm' | 'os' | 'estoque' | 'templates' | 'config' | 'registro' | 'aprovacoes' | 'manuais'
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState<Page>('dashboard')
@@ -26,6 +27,7 @@ export default function Home() {
       case 'config': return <Config />
       case 'registro': return <RegistroServico />
       case 'aprovacoes': return <AprovacoesLista />
+      case 'manuais': return <Manuais />
       default: return <Dashboard />
     }
   }

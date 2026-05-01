@@ -1,0 +1,1073 @@
+{
+  "versao": "1.0",
+  "atualizado_em": "2026-05-01",
+  "fontes_gerais": ["Manuais de proprietário dos fabricantes", "Checklist Moura Baterias", "AutoCare Manutenção Preventiva", "Calculadora Brasil Revisão Veicular 2026"],
+  "modelos": [
+    {
+      "id": "fiat-strada",
+      "marca": "Fiat",
+      "modelo": "Strada",
+      "categoria": "picape",
+      "ano_inicio": 2020,
+      "ano_fim": 2026,
+      "checklists": [
+        {
+          "km": 10000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 4L", "custo_estimado": 180},
+            {"item": "Filtro de óleo", "detalhe": "Original Fiat", "custo_estimado": 55}
+          ],
+          "itens_conferir": [
+            {"item": "Fluido de freio", "detalhe": "Nível e umidade"},
+            {"item": "Pressão dos pneus", "detalhe": "32 PSI dianteiro, 30 PSI traseiro"},
+            {"item": "Sistema de iluminação", "detalhe": "Faróis, lanternas, setas"},
+            {"item": "Bateria", "detalhe": "Tensão e terminais"}
+          ]
+        },
+        {
+          "km": 20000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 4L", "custo_estimado": 180},
+            {"item": "Filtro de óleo", "detalhe": "Original Fiat", "custo_estimado": 55},
+            {"item": "Filtro de ar do motor", "detalhe": "Original Fiat", "custo_estimado": 65},
+            {"item": "Filtro de combustível", "detalhe": "A cada 20.000 km", "custo_estimado": 90}
+          ],
+          "itens_conferir": [
+            {"item": "Pastilhas de freio dianteiras", "detalhe": "Espessura mínima 3mm"},
+            {"item": "Fluido de arrefecimento", "detalhe": "Nível e validade"},
+            {"item": "Correias auxiliares", "detalhe": "Desgaste e tensão"},
+            {"item": "Amortecedores", "detalhe": "Vazamentos e folgas"}
+          ]
+        },
+        {
+          "km": 30000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 4L", "custo_estimado": 180},
+            {"item": "Filtro de óleo", "detalhe": "Original Fiat", "custo_estimado": 55},
+            {"item": "Fluido de freio", "detalhe": "DOT 4, substituir a cada 2 anos", "custo_estimado": 80},
+            {"item": "Filtro de cabine (ar-condicionado)", "detalhe": "Carvão ativado", "custo_estimado": 45}
+          ],
+          "itens_conferir": [
+            {"item": "Velas de ignição", "detalhe": "Desgaste dos eletrodos"},
+            {"item": "Sistema de injeção", "detalhe": "Limpeza se necessário"},
+            {"item": "Suspensão dianteira", "detalhe": "Buchas, bieletas, pivôs"},
+            {"item": "Alinhamento e balanceamento", "detalhe": "Desgaste irregular dos pneus"}
+          ]
+        },
+        {
+          "km": 40000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 4L", "custo_estimado": 180},
+            {"item": "Filtro de óleo", "detalhe": "Original Fiat", "custo_estimado": 55},
+            {"item": "Filtro de ar do motor", "detalhe": "Original Fiat", "custo_estimado": 65},
+            {"item": "Velas de ignição", "detalhe": "Iridium, 4 unidades", "custo_estimado": 160},
+            {"item": "Correia dentada (se aplicável)", "detalhe": "Verificar no manual - motor 1.4 Fire", "custo_estimado": 350}
+          ],
+          "itens_conferir": [
+            {"item": "Embreagem", "detalhe": "Curso e desgaste"},
+            {"item": "Transmissão", "detalhe": "Fluido e vazamentos"},
+            {"item": "Coxins do motor", "detalhe": "Rachaduras e folgas"},
+            {"item": "Escapamento", "detalhe": "Furos e fixação"},
+            {"item": "Direção hidráulica/elétrica", "detalhe": "Fluido e folgas"}
+          ]
+        },
+        {
+          "km": 50000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 4L", "custo_estimado": 180},
+            {"item": "Filtro de óleo", "detalhe": "Original Fiat", "custo_estimado": 55},
+            {"item": "Fluido de arrefecimento", "detalhe": "Troca completa, 6L", "custo_estimado": 120},
+            {"item": "Fluido de transmissão (manual)", "detalhe": "Óleo 75W-85", "custo_estimado": 90},
+            {"item": "Pastilhas de freio dianteiras", "detalhe": "Se desgaste > 70%", "custo_estimado": 180}
+          ],
+          "itens_conferir": [
+            {"item": "Discos de freio", "detalhe": "Espessura e empenamento"},
+            {"item": "Bomba de combustível", "detalhe": "Pressão e ruídos"},
+            {"item": "Sensores de oxigênio (sonda lambda)", "detalhe": "Funcionamento"},
+            {"item": "Buchas da suspensão traseira", "detalhe": "Folgas"}
+          ]
+        },
+        {
+          "km": 60000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 4L", "custo_estimado": 180},
+            {"item": "Filtro de óleo", "detalhe": "Original Fiat", "custo_estimado": 55},
+            {"item": "Filtro de ar do motor", "detalhe": "Original Fiat", "custo_estimado": 65},
+            {"item": "Filtro de combustível", "detalhe": "A cada 20.000 km", "custo_estimado": 90},
+            {"item": "Correia dentada", "detalhe": "⚠️ CRÍTICO - Substituir mesmo sem sinais", "custo_estimado": 350},
+            {"item": "Todos os fluidos", "detalhe": "Freio + arrefecimento + transmissão + direção", "custo_estimado": 300}
+          ],
+          "itens_conferir": [
+            {"item": "Revisão geral completa", "detalhe": "Checklist de 60 pontos"},
+            {"item": "Motor (compressão)", "detalhe": "Teste de compressão"},
+            {"item": "Sistema elétrico", "detalhe": "Alternador, motor de partida"},
+            {"item": "Tubulações e mangueiras", "detalhe": "Todas as conexões"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vw-polo",
+      "marca": "Volkswagen",
+      "modelo": "Polo",
+      "categoria": "hatch",
+      "ano_inicio": 2018,
+      "ano_fim": 2026,
+      "checklists": [
+        {
+          "km": 10000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-40 sintético, 4L (motor TSI)", "custo_estimado": 200},
+            {"item": "Filtro de óleo", "detalhe": "Original VW", "custo_estimado": 60}
+          ],
+          "itens_conferir": [
+            {"item": "Fluido de freio", "detalhe": "Nível DOT 4"},
+            {"item": "Pressão dos pneus", "detalhe": "34 PSI dianteiro, 32 PSI traseiro"},
+            {"item": "Sistema de iluminação", "detalhe": "Full LED conferir"}
+          ]
+        },
+        {
+          "km": 20000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-40 sintético, 4L", "custo_estimado": 200},
+            {"item": "Filtro de óleo", "detalhe": "Original VW", "custo_estimado": 60},
+            {"item": "Filtro de ar do motor", "detalhe": "Original VW", "custo_estimado": 75},
+            {"item": "Filtro de pólen (cabine)", "detalhe": "Carvão ativado", "custo_estimado": 50}
+          ],
+          "itens_conferir": [
+            {"item": "Pastilhas de freio", "detalhe": "Dianteiras e traseiras"},
+            {"item": "Correias auxiliares", "detalhe": "Desgaste e ruídos"}
+          ]
+        },
+        {
+          "km": 30000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-40 sintético, 4L", "custo_estimado": 200},
+            {"item": "Filtro de óleo", "detalhe": "Original VW", "custo_estimado": 60},
+            {"item": "Fluido de freio", "detalhe": "DOT 4, troca obrigatória", "custo_estimado": 100},
+            {"item": "Velas de ignição", "detalhe": "Motor TSI: troca a cada 40.000 km (conferir)", "custo_estimado": 200}
+          ],
+          "itens_conferir": [
+            {"item": "Injeção eletrônica", "detalhe": "Bicos injetores"},
+            {"item": "Suspensão", "detalhe": "Batentes, coxins"}
+          ]
+        },
+        {
+          "km": 40000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-40 sintético, 4L", "custo_estimado": 200},
+            {"item": "Filtro de óleo", "detalhe": "Original VW", "custo_estimado": 60},
+            {"item": "Filtro de ar do motor", "detalhe": "Original VW", "custo_estimado": 75},
+            {"item": "Velas de ignição", "detalhe": "4 unidades Iridium (TSI)", "custo_estimado": 200},
+            {"item": "Óleo da transmissão (automática DSG)", "detalhe": "Troca a cada 40.000 km", "custo_estimado": 400}
+          ],
+          "itens_conferir": [
+            {"item": "Correia dentada", "detalhe": "Verificar desgaste (motor TSI)"},
+            {"item": "Embreagem (manual)", "detalhe": "Curso e patinação"}
+          ]
+        },
+        {
+          "km": 50000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-40 sintético, 4L", "custo_estimado": 200},
+            {"item": "Filtro de óleo", "detalhe": "Original VW", "custo_estimado": 60},
+            {"item": "Fluido de arrefecimento", "detalhe": "Troca completa", "custo_estimado": 130},
+            {"item": "Pastilhas de freio", "detalhe": "Dianteiras se desgaste >70%", "custo_estimado": 200}
+          ],
+          "itens_conferir": [
+            {"item": "Discos de freio", "detalhe": "Empenamento"},
+            {"item": "Bomba d'água", "detalhe": "Vazamentos"}
+          ]
+        },
+        {
+          "km": 60000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-40 sintético, 4L", "custo_estimado": 200},
+            {"item": "Filtro de óleo", "detalhe": "Original VW", "custo_estimado": 60},
+            {"item": "Filtro de ar do motor", "detalhe": "Original VW", "custo_estimado": 75},
+            {"item": "Correia dentada", "detalhe": "⚠️ SUBSTITUIÇÃO OBRIGATÓRIA", "custo_estimado": 500},
+            {"item": "Todos os fluidos", "detalhe": "Freio + arrefecimento + transmissão", "custo_estimado": 350}
+          ],
+          "itens_conferir": [
+            {"item": "Revisão geral", "detalhe": "60 pontos de inspeção VW"},
+            {"item": "Sistema de turbo (TSI)", "detalhe": "Funcionamento e ruídos"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chevrolet-onix",
+      "marca": "Chevrolet",
+      "modelo": "Onix",
+      "categoria": "hatch",
+      "ano_inicio": 2020,
+      "ano_fim": 2026,
+      "checklists": [
+        {
+          "km": 10000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 Dexos, 4L", "custo_estimado": 170},
+            {"item": "Filtro de óleo", "detalhe": "Original GM", "custo_estimado": 50}
+          ],
+          "itens_conferir": [
+            {"item": "Fluido de freio", "detalhe": "Nível"},
+            {"item": "Pressão dos pneus", "detalhe": "35 PSI todos"},
+            {"item": "Filtro de cabine", "detalhe": "Substituir se sujo"}
+          ]
+        },
+        {
+          "km": 20000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 Dexos, 4L", "custo_estimado": 170},
+            {"item": "Filtro de óleo", "detalhe": "Original GM", "custo_estimado": 50},
+            {"item": "Filtro de ar do motor", "detalhe": "Original GM", "custo_estimado": 60},
+            {"item": "Filtro de combustível", "detalhe": "A cada 20.000 km", "custo_estimado": 85}
+          ],
+          "itens_conferir": [
+            {"item": "Pastilhas de freio", "detalhe": "Dianteiras e traseiras"},
+            {"item": "Bateria", "detalhe": "Carga e terminais"}
+          ]
+        },
+        {
+          "km": 30000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 Dexos, 4L", "custo_estimado": 170},
+            {"item": "Filtro de óleo", "detalhe": "Original GM", "custo_estimado": 50},
+            {"item": "Fluido de freio", "detalhe": "DOT 4, troca obrigatória", "custo_estimado": 80}
+          ],
+          "itens_conferir": [
+            {"item": "Velas de ignição", "detalhe": "Motor 1.0/1.4 turbo"},
+            {"item": "Sistema de injeção", "detalhe": "Limpeza"}
+          ]
+        },
+        {
+          "km": 40000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 Dexos, 4L", "custo_estimado": 170},
+            {"item": "Filtro de óleo", "detalhe": "Original GM", "custo_estimado": 50},
+            {"item": "Filtro de ar do motor", "detalhe": "Original GM", "custo_estimado": 60},
+            {"item": "Velas de ignição", "detalhe": "4 unidades", "custo_estimado": 150},
+            {"item": "Óleo da transmissão (automática)", "detalhe": "Troca a cada 40.000 km", "custo_estimado": 350}
+          ],
+          "itens_conferir": [
+            {"item": "Correia dentada", "detalhe": "Verificar desgaste"},
+            {"item": "Amortecedores", "detalhe": "Vazamentos"}
+          ]
+        },
+        {
+          "km": 50000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 Dexos, 4L", "custo_estimado": 170},
+            {"item": "Filtro de óleo", "detalhe": "Original GM", "custo_estimado": 50},
+            {"item": "Fluido de arrefecimento", "detalhe": "Troca completa", "custo_estimado": 110},
+            {"item": "Pastilhas de freio", "detalhe": "Se desgaste >70%", "custo_estimado": 170}
+          ],
+          "itens_conferir": [
+            {"item": "Discos de freio", "detalhe": "Espessura"},
+            {"item": "Bomba d'água", "detalhe": "Vazamentos"}
+          ]
+        },
+        {
+          "km": 60000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 Dexos, 4L", "custo_estimado": 170},
+            {"item": "Filtro de óleo", "detalhe": "Original GM", "custo_estimado": 50},
+            {"item": "Filtro de combustível", "detalhe": "A cada 20.000 km", "custo_estimado": 85},
+            {"item": "Correia dentada", "detalhe": "⚠️ SUBSTITUIÇÃO OBRIGATÓRIA", "custo_estimado": 450},
+            {"item": "Todos os fluidos", "detalhe": "Freio + arrefecimento + transmissão", "custo_estimado": 320}
+          ],
+          "itens_conferir": [
+            {"item": "Revisão geral completa", "detalhe": "Checklist 60 pontos"},
+            {"item": "Sistema de turbo", "detalhe": "Motores turbo"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hyundai-hb20",
+      "marca": "Hyundai",
+      "modelo": "HB20",
+      "categoria": "hatch",
+      "ano_inicio": 2020,
+      "ano_fim": 2026,
+      "checklists": [
+        {
+          "km": 10000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 3.6L", "custo_estimado": 160},
+            {"item": "Filtro de óleo", "detalhe": "Original Hyundai", "custo_estimado": 50}
+          ],
+          "itens_conferir": [
+            {"item": "Nível dos fluidos", "detalhe": "Freio, arrefecimento, direção"},
+            {"item": "Pressão dos pneus", "detalhe": "33 PSI"},
+            {"item": "Iluminação", "detalhe": "Faróis e lanternas"}
+          ]
+        },
+        {
+          "km": 20000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 3.6L", "custo_estimado": 160},
+            {"item": "Filtro de óleo", "detalhe": "Original Hyundai", "custo_estimado": 50},
+            {"item": "Filtro de ar do motor", "detalhe": "Original Hyundai", "custo_estimado": 55},
+            {"item": "Filtro de cabine", "detalhe": "Carvão ativado", "custo_estimado": 40}
+          ],
+          "itens_conferir": [
+            {"item": "Pastilhas de freio", "detalhe": "Desgaste"},
+            {"item": "Correia auxiliar", "detalhe": "Tensão"}
+          ]
+        },
+        {
+          "km": 30000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 3.6L", "custo_estimado": 160},
+            {"item": "Filtro de óleo", "detalhe": "Original Hyundai", "custo_estimado": 50},
+            {"item": "Fluido de freio", "detalhe": "DOT 4", "custo_estimado": 80},
+            {"item": "Filtro de combustível", "detalhe": "A cada 30.000 km", "custo_estimado": 95}
+          ],
+          "itens_conferir": [
+            {"item": "Velas de ignição", "detalhe": "Desgaste"},
+            {"item": "Suspensão", "detalhe": "Buchas e bieletas"}
+          ]
+        },
+        {
+          "km": 40000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 3.6L", "custo_estimado": 160},
+            {"item": "Filtro de óleo", "detalhe": "Original Hyundai", "custo_estimado": 50},
+            {"item": "Filtro de ar do motor", "detalhe": "Original Hyundai", "custo_estimado": 55},
+            {"item": "Velas de ignição", "detalhe": "4 unidades Iridium", "custo_estimado": 170}
+          ],
+          "itens_conferir": [
+            {"item": "Correia dentada", "detalhe": "Motor Kappa 1.0/1.6"},
+            {"item": "Transmissão automática", "detalhe": "Fluido"}
+          ]
+        },
+        {
+          "km": 50000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 3.6L", "custo_estimado": 160},
+            {"item": "Filtro de óleo", "detalhe": "Original Hyundai", "custo_estimado": 50},
+            {"item": "Fluido de arrefecimento", "detalhe": "Troca completa", "custo_estimado": 100},
+            {"item": "Óleo da transmissão", "detalhe": "Manual ou automática", "custo_estimado": 150}
+          ],
+          "itens_conferir": [
+            {"item": "Embreagem", "detalhe": "Curso e desgaste"},
+            {"item": "Bomba d'água", "detalhe": "Vazamentos"}
+          ]
+        },
+        {
+          "km": 60000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 3.6L", "custo_estimado": 160},
+            {"item": "Filtro de óleo", "detalhe": "Original Hyundai", "custo_estimado": 50},
+            {"item": "Filtro de combustível", "detalhe": "A cada 30.000 km", "custo_estimado": 95},
+            {"item": "Correia dentada", "detalhe": "⚠️ SUBSTITUIÇÃO OBRIGATÓRIA", "custo_estimado": 400},
+            {"item": "Todos os fluidos", "detalhe": "Freio + arrefecimento + transmissão + direção", "custo_estimado": 300}
+          ],
+          "itens_conferir": [
+            {"item": "Revisão geral completa", "detalhe": "Checklist Hyundai 60 pontos"},
+            {"item": "Sistema elétrico", "detalhe": "Alternador, motor partida"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fiat-argo",
+      "marca": "Fiat",
+      "modelo": "Argo",
+      "categoria": "hatch",
+      "ano_inicio": 2018,
+      "ano_fim": 2026,
+      "checklists": [
+        {
+          "km": 10000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 4L", "custo_estimado": 170},
+            {"item": "Filtro de óleo", "detalhe": "Original Fiat", "custo_estimado": 50}
+          ],
+          "itens_conferir": [
+            {"item": "Fluidos", "detalhe": "Freio, arrefecimento, direção"},
+            {"item": "Pneus", "detalhe": "32 PSI"},
+            {"item": "Bateria", "detalhe": "Tensão"}
+          ]
+        },
+        {
+          "km": 20000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 4L", "custo_estimado": 170},
+            {"item": "Filtro de óleo", "detalhe": "Original Fiat", "custo_estimado": 50},
+            {"item": "Filtro de ar do motor", "detalhe": "Original Fiat", "custo_estimado": 55},
+            {"item": "Filtro de combustível", "detalhe": "A cada 20.000 km", "custo_estimado": 80}
+          ],
+          "itens_conferir": [
+            {"item": "Pastilhas de freio", "detalhe": "Espessura"},
+            {"item": "Correias", "detalhe": "Desgaste"}
+          ]
+        },
+        {
+          "km": 30000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 4L", "custo_estimado": 170},
+            {"item": "Filtro de óleo", "detalhe": "Original Fiat", "custo_estimado": 50},
+            {"item": "Fluido de freio", "detalhe": "DOT 4", "custo_estimado": 75}
+          ],
+          "itens_conferir": [
+            {"item": "Velas", "detalhe": "Desgaste"},
+            {"item": "Injeção", "detalhe": "Bicos"}
+          ]
+        },
+        {
+          "km": 40000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 4L", "custo_estimado": 170},
+            {"item": "Filtro de óleo", "detalhe": "Original Fiat", "custo_estimado": 50},
+            {"item": "Filtro de ar", "detalhe": "Original Fiat", "custo_estimado": 55},
+            {"item": "Velas de ignição", "detalhe": "4 unidades", "custo_estimado": 140}
+          ],
+          "itens_conferir": [
+            {"item": "Correia dentada", "detalhe": "Motor Firefly"},
+            {"item": "Transmissão", "detalhe": "Fluido"}
+          ]
+        },
+        {
+          "km": 50000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 4L", "custo_estimado": 170},
+            {"item": "Filtro de óleo", "detalhe": "Original Fiat", "custo_estimado": 50},
+            {"item": "Fluido de arrefecimento", "detalhe": "Troca completa", "custo_estimado": 100},
+            {"item": "Óleo da transmissão", "detalhe": "Manual", "custo_estimado": 80}
+          ],
+          "itens_conferir": [
+            {"item": "Discos de freio", "detalhe": "Espessura"},
+            {"item": "Amortecedores", "detalhe": "Vazamentos"}
+          ]
+        },
+        {
+          "km": 60000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 4L", "custo_estimado": 170},
+            {"item": "Filtro de óleo", "detalhe": "Original Fiat", "custo_estimado": 50},
+            {"item": "Filtro de combustível", "detalhe": "A cada 20.000 km", "custo_estimado": 80},
+            {"item": "Correia dentada", "detalhe": "⚠️ SUBSTITUIÇÃO OBRIGATÓRIA", "custo_estimado": 350},
+            {"item": "Todos os fluidos", "detalhe": "Completo", "custo_estimado": 280}
+          ],
+          "itens_conferir": [
+            {"item": "Revisão geral", "detalhe": "60 pontos"},
+            {"item": "Motor", "detalhe": "Compressão"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vw-tcross",
+      "marca": "Volkswagen",
+      "modelo": "T-Cross",
+      "categoria": "suv",
+      "ano_inicio": 2019,
+      "ano_fim": 2026,
+      "checklists": [
+        {
+          "km": 10000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-40 sintético, 4.5L (TSI)", "custo_estimado": 220},
+            {"item": "Filtro de óleo", "detalhe": "Original VW", "custo_estimado": 65}
+          ],
+          "itens_conferir": [
+            {"item": "Fluido de freio", "detalhe": "Nível DOT 4"},
+            {"item": "Pressão dos pneus", "detalhe": "36 PSI dianteiro, 34 PSI traseiro"},
+            {"item": "Sistema de iluminação", "detalhe": "Full LED"}
+          ]
+        },
+        {
+          "km": 20000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-40 sintético, 4.5L", "custo_estimado": 220},
+            {"item": "Filtro de óleo", "detalhe": "Original VW", "custo_estimado": 65},
+            {"item": "Filtro de ar do motor", "detalhe": "Original VW", "custo_estimado": 80},
+            {"item": "Filtro de cabine", "detalhe": "Carvão ativado", "custo_estimado": 55}
+          ],
+          "itens_conferir": [
+            {"item": "Pastilhas de freio", "detalhe": "SUV: desgaste maior"},
+            {"item": "Correia auxiliar", "detalhe": "Tensão"}
+          ]
+        },
+        {
+          "km": 30000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-40 sintético, 4.5L", "custo_estimado": 220},
+            {"item": "Filtro de óleo", "detalhe": "Original VW", "custo_estimado": 65},
+            {"item": "Fluido de freio", "detalhe": "DOT 4, troca obrigatória", "custo_estimado": 110},
+            {"item": "Velas de ignição", "detalhe": "TSI: conferir necessidade", "custo_estimado": 220}
+          ],
+          "itens_conferir": [
+            {"item": "Suspensão", "detalhe": "SUV: maior exigência"},
+            {"item": "Injeção eletrônica", "detalhe": "Bicos TSI"}
+          ]
+        },
+        {
+          "km": 40000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-40 sintético, 4.5L", "custo_estimado": 220},
+            {"item": "Filtro de óleo", "detalhe": "Original VW", "custo_estimado": 65},
+            {"item": "Filtro de ar do motor", "detalhe": "Original VW", "custo_estimado": 80},
+            {"item": "Velas de ignição", "detalhe": "4 unidades Iridium TSI", "custo_estimado": 220},
+            {"item": "Óleo da transmissão DSG", "detalhe": "Troca obrigatória a cada 40.000 km", "custo_estimado": 450}
+          ],
+          "itens_conferir": [
+            {"item": "Correia dentada", "detalhe": "Motor TSI"},
+            {"item": "Turbo", "detalhe": "Funcionamento"}
+          ]
+        },
+        {
+          "km": 50000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-40 sintético, 4.5L", "custo_estimado": 220},
+            {"item": "Filtro de óleo", "detalhe": "Original VW", "custo_estimado": 65},
+            {"item": "Fluido de arrefecimento", "detalhe": "Troca completa", "custo_estimado": 140},
+            {"item": "Pastilhas de freio dianteiras", "detalhe": "SUV: desgaste acentuado", "custo_estimado": 250}
+          ],
+          "itens_conferir": [
+            {"item": "Discos de freio", "detalhe": "SUV: empenamento comum"},
+            {"item": "Bomba d'água", "detalhe": "Vazamentos"}
+          ]
+        },
+        {
+          "km": 60000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-40 sintético, 4.5L", "custo_estimado": 220},
+            {"item": "Filtro de óleo", "detalhe": "Original VW", "custo_estimado": 65},
+            {"item": "Filtro de ar do motor", "detalhe": "Original VW", "custo_estimado": 80},
+            {"item": "Correia dentada", "detalhe": "⚠️ SUBSTITUIÇÃO OBRIGATÓRIA", "custo_estimado": 550},
+            {"item": "Todos os fluidos", "detalhe": "Freio + arrefecimento + DSG + direção", "custo_estimado": 400}
+          ],
+          "itens_conferir": [
+            {"item": "Revisão geral", "detalhe": "60 pontos VW SUV"},
+            {"item": "Sistema turbo e injeção", "detalhe": "Completo"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hyundai-creta",
+      "marca": "Hyundai",
+      "modelo": "Creta",
+      "categoria": "suv",
+      "ano_inicio": 2020,
+      "ano_fim": 2026,
+      "checklists": [
+        {
+          "km": 10000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 4L", "custo_estimado": 170},
+            {"item": "Filtro de óleo", "detalhe": "Original Hyundai", "custo_estimado": 55}
+          ],
+          "itens_conferir": [
+            {"item": "Fluidos", "detalhe": "Freio, arrefecimento"},
+            {"item": "Pneus", "detalhe": "34 PSI"},
+            {"item": "Iluminação", "detalhe": "LED"}
+          ]
+        },
+        {
+          "km": 20000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 4L", "custo_estimado": 170},
+            {"item": "Filtro de óleo", "detalhe": "Original Hyundai", "custo_estimado": 55},
+            {"item": "Filtro de ar", "detalhe": "Original Hyundai", "custo_estimado": 60},
+            {"item": "Filtro de cabine", "detalhe": "Carvão ativado", "custo_estimado": 45}
+          ],
+          "itens_conferir": [
+            {"item": "Pastilhas", "detalhe": "Desgaste"},
+            {"item": "Correia", "detalhe": "Tensão"}
+          ]
+        },
+        {
+          "km": 30000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 4L", "custo_estimado": 170},
+            {"item": "Filtro de óleo", "detalhe": "Original Hyundai", "custo_estimado": 55},
+            {"item": "Fluido de freio", "detalhe": "DOT 4", "custo_estimado": 85}
+          ],
+          "itens_conferir": [
+            {"item": "Velas", "detalhe": "Desgaste"},
+            {"item": "Suspensão", "detalhe": "SUV"}
+          ]
+        },
+        {
+          "km": 40000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 4L", "custo_estimado": 170},
+            {"item": "Filtro de óleo", "detalhe": "Original Hyundai", "custo_estimado": 55},
+            {"item": "Filtro de ar", "detalhe": "Original Hyundai", "custo_estimado": 60},
+            {"item": "Velas de ignição", "detalhe": "4 unidades", "custo_estimado": 160}
+          ],
+          "itens_conferir": [
+            {"item": "Correia dentada", "detalhe": "Motor Nu 2.0"},
+            {"item": "Transmissão", "detalhe": "Automática: fluido"}
+          ]
+        },
+        {
+          "km": 50000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 4L", "custo_estimado": 170},
+            {"item": "Filtro de óleo", "detalhe": "Original Hyundai", "custo_estimado": 55},
+            {"item": "Fluido de arrefecimento", "detalhe": "Troca completa", "custo_estimado": 110},
+            {"item": "Óleo da transmissão", "detalhe": "Automática: troca", "custo_estimado": 300}
+          ],
+          "itens_conferir": [
+            {"item": "Discos de freio", "detalhe": "SUV"},
+            {"item": "Amortecedores", "detalhe": "Vazamentos"}
+          ]
+        },
+        {
+          "km": 60000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 4L", "custo_estimado": 170},
+            {"item": "Filtro de óleo", "detalhe": "Original Hyundai", "custo_estimado": 55},
+            {"item": "Correia dentada", "detalhe": "⚠️ SUBSTITUIÇÃO OBRIGATÓRIA", "custo_estimado": 420},
+            {"item": "Todos os fluidos", "detalhe": "Completo", "custo_estimado": 320}
+          ],
+          "itens_conferir": [
+            {"item": "Revisão geral", "detalhe": "60 pontos Hyundai"},
+            {"item": "Motor", "detalhe": "Compressão"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fiat-mobi",
+      "marca": "Fiat",
+      "modelo": "Mobi",
+      "categoria": "hatch",
+      "ano_inicio": 2016,
+      "ano_fim": 2026,
+      "checklists": [
+        {
+          "km": 10000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 3.5L", "custo_estimado": 140},
+            {"item": "Filtro de óleo", "detalhe": "Original Fiat", "custo_estimado": 45}
+          ],
+          "itens_conferir": [
+            {"item": "Fluidos gerais", "detalhe": "Freio, arrefecimento"},
+            {"item": "Pneus", "detalhe": "30 PSI"},
+            {"item": "Bateria", "detalhe": "Tensão"}
+          ]
+        },
+        {
+          "km": 20000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 3.5L", "custo_estimado": 140},
+            {"item": "Filtro de óleo", "detalhe": "Original Fiat", "custo_estimado": 45},
+            {"item": "Filtro de ar", "detalhe": "Original", "custo_estimado": 50},
+            {"item": "Filtro de cabine", "detalhe": "Simples", "custo_estimado": 30}
+          ],
+          "itens_conferir": [
+            {"item": "Pastilhas", "detalhe": "Desgaste"},
+            {"item": "Correia", "detalhe": "Auxiliar"}
+          ]
+        },
+        {
+          "km": 30000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 3.5L", "custo_estimado": 140},
+            {"item": "Filtro de óleo", "detalhe": "Original Fiat", "custo_estimado": 45},
+            {"item": "Fluido de freio", "detalhe": "DOT 4", "custo_estimado": 70}
+          ],
+          "itens_conferir": [
+            {"item": "Velas", "detalhe": "Motor Fire"},
+            {"item": "Injeção", "detalhe": "Bicos"}
+          ]
+        },
+        {
+          "km": 40000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 3.5L", "custo_estimado": 140},
+            {"item": "Filtro de óleo", "detalhe": "Original Fiat", "custo_estimado": 45},
+            {"item": "Filtro de ar", "detalhe": "Original", "custo_estimado": 50},
+            {"item": "Velas de ignição", "detalhe": "4 unidades", "custo_estimado": 120}
+          ],
+          "itens_conferir": [
+            {"item": "Correia dentada", "detalhe": "Motor Fire 1.0"},
+            {"item": "Embreagem", "detalhe": "Curso"}
+          ]
+        },
+        {
+          "km": 50000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 3.5L", "custo_estimado": 140},
+            {"item": "Filtro de óleo", "detalhe": "Original Fiat", "custo_estimado": 45},
+            {"item": "Fluido de arrefecimento", "detalhe": "Troca", "custo_estimado": 85},
+            {"item": "Óleo da transmissão", "detalhe": "Manual", "custo_estimado": 60}
+          ],
+          "itens_conferir": [
+            {"item": "Discos de freio", "detalhe": "Espessura"},
+            {"item": "Suspensão", "detalhe": "Simples: verificar"}
+          ]
+        },
+        {
+          "km": 60000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 3.5L", "custo_estimado": 140},
+            {"item": "Filtro de óleo", "detalhe": "Original Fiat", "custo_estimado": 45},
+            {"item": "Correia dentada", "detalhe": "⚠️ SUBSTITUIÇÃO OBRIGATÓRIA", "custo_estimado": 300},
+            {"item": "Todos os fluidos", "detalhe": "Completo", "custo_estimado": 250}
+          ],
+          "itens_conferir": [
+            {"item": "Revisão geral", "detalhe": "50 pontos"},
+            {"item": "Motor", "detalhe": "Compressão"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nissan-kicks",
+      "marca": "Nissan",
+      "modelo": "Kicks",
+      "categoria": "suv",
+      "ano_inicio": 2017,
+      "ano_fim": 2026,
+      "checklists": [
+        {
+          "km": 10000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 4.5L", "custo_estimado": 190},
+            {"item": "Filtro de óleo", "detalhe": "Original Nissan", "custo_estimado": 55}
+          ],
+          "itens_conferir": [
+            {"item": "Fluidos", "detalhe": "Freio, arrefecimento"},
+            {"item": "Pneus", "detalhe": "33 PSI"},
+            {"item": "Iluminação", "detalhe": "LED"}
+          ]
+        },
+        {
+          "km": 20000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 4.5L", "custo_estimado": 190},
+            {"item": "Filtro de óleo", "detalhe": "Original Nissan", "custo_estimado": 55},
+            {"item": "Filtro de ar", "detalhe": "Original", "custo_estimado": 65},
+            {"item": "Filtro de cabine", "detalhe": "Carvão ativado", "custo_estimado": 50}
+          ],
+          "itens_conferir": [
+            {"item": "Pastilhas", "detalhe": "Desgaste"},
+            {"item": "Correia", "detalhe": "Auxiliar"}
+          ]
+        },
+        {
+          "km": 30000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 4.5L", "custo_estimado": 190},
+            {"item": "Filtro de óleo", "detalhe": "Original Nissan", "custo_estimado": 55},
+            {"item": "Fluido de freio", "detalhe": "DOT 4", "custo_estimado": 90}
+          ],
+          "itens_conferir": [
+            {"item": "Velas", "detalhe": "Motor 1.6"},
+            {"item": "Suspensão", "detalhe": "SUV"}
+          ]
+        },
+        {
+          "km": 40000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 4.5L", "custo_estimado": 190},
+            {"item": "Filtro de óleo", "detalhe": "Original Nissan", "custo_estimado": 55},
+            {"item": "Filtro de ar", "detalhe": "Original", "custo_estimado": 65},
+            {"item": "Velas de ignição", "detalhe": "4 unidades Iridium", "custo_estimado": 180}
+          ],
+          "itens_conferir": [
+            {"item": "Corrente de distribuição", "detalhe": "Motor HR16DE (corrente)"},
+            {"item": "CVT", "detalhe": "Fluido"}
+          ]
+        },
+        {
+          "km": 50000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 4.5L", "custo_estimado": 190},
+            {"item": "Filtro de óleo", "detalhe": "Original Nissan", "custo_estimado": 55},
+            {"item": "Fluido de arrefecimento", "detalhe": "Troca", "custo_estimado": 120},
+            {"item": "Óleo CVT", "detalhe": "Troca a cada 50.000 km", "custo_estimado": 380}
+          ],
+          "itens_conferir": [
+            {"item": "Discos de freio", "detalhe": "SUV"},
+            {"item": "Amortecedores", "detalhe": "Vazamentos"}
+          ]
+        },
+        {
+          "km": 60000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 sintético, 4.5L", "custo_estimado": 190},
+            {"item": "Filtro de óleo", "detalhe": "Original Nissan", "custo_estimado": 55},
+            {"item": "Filtro de ar", "detalhe": "Original", "custo_estimado": 65},
+            {"item": "Todos os fluidos", "detalhe": "Freio + arrefecimento + CVT", "custo_estimado": 380},
+            {"item": "Pastilhas de freio", "detalhe": "Dianteiras e traseiras", "custo_estimado": 220}
+          ],
+          "itens_conferir": [
+            {"item": "Revisão geral", "detalhe": "60 pontos Nissan"},
+            {"item": "Corrente distribuição", "detalhe": "Normalmente não substitui"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "honda-hrv",
+      "marca": "Honda",
+      "modelo": "HR-V",
+      "categoria": "suv",
+      "ano_inicio": 2021,
+      "ano_fim": 2026,
+      "checklists": [
+        {
+          "km": 10000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "0W-20 sintético, 4L", "custo_estimado": 200},
+            {"item": "Filtro de óleo", "detalhe": "Original Honda", "custo_estimado": 60}
+          ],
+          "itens_conferir": [
+            {"item": "Fluidos", "detalhe": "Freio, arrefecimento"},
+            {"item": "Pneus", "detalhe": "32 PSI"},
+            {"item": "Iluminação", "detalhe": "Full LED"}
+          ]
+        },
+        {
+          "km": 20000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "0W-20 sintético, 4L", "custo_estimado": 200},
+            {"item": "Filtro de óleo", "detalhe": "Original Honda", "custo_estimado": 60},
+            {"item": "Filtro de ar", "detalhe": "Original", "custo_estimado": 70},
+            {"item": "Filtro de cabine", "detalhe": "Carvão ativado", "custo_estimado": 50}
+          ],
+          "itens_conferir": [
+            {"item": "Pastilhas", "detalhe": "Desgaste"},
+            {"item": "Correia", "detalhe": "Auxiliar"}
+          ]
+        },
+        {
+          "km": 30000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "0W-20 sintético, 4L", "custo_estimado": 200},
+            {"item": "Filtro de óleo", "detalhe": "Original Honda", "custo_estimado": 60},
+            {"item": "Fluido de freio", "detalhe": "DOT 4", "custo_estimado": 90}
+          ],
+          "itens_conferir": [
+            {"item": "Velas", "detalhe": "Motor 1.5 Turbo"},
+            {"item": "Suspensão", "detalhe": "SUV"}
+          ]
+        },
+        {
+          "km": 40000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "0W-20 sintético, 4L", "custo_estimado": 200},
+            {"item": "Filtro de óleo", "detalhe": "Original Honda", "custo_estimado": 60},
+            {"item": "Filtro de ar", "detalhe": "Original", "custo_estimado": 70},
+            {"item": "Óleo CVT", "detalhe": "Honda HCF-2, troca a cada 40.000 km", "custo_estimado": 400}
+          ],
+          "itens_conferir": [
+            {"item": "Velas", "detalhe": "Conferir (Iridium)"},
+            {"item": "Corrente", "detalhe": "Motor corrente: não substitui"}
+          ]
+        },
+        {
+          "km": 50000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "0W-20 sintético, 4L", "custo_estimado": 200},
+            {"item": "Filtro de óleo", "detalhe": "Original Honda", "custo_estimado": 60},
+            {"item": "Fluido de arrefecimento", "detalhe": "Troca", "custo_estimado": 130},
+            {"item": "Velas de ignição", "detalhe": "Substituir se não trocou", "custo_estimado": 250}
+          ],
+          "itens_conferir": [
+            {"item": "Discos de freio", "detalhe": "SUV"},
+            {"item": "Turbo", "detalhe": "Funcionamento"}
+          ]
+        },
+        {
+          "km": 60000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "0W-20 sintético, 4L", "custo_estimado": 200},
+            {"item": "Filtro de óleo", "detalhe": "Original Honda", "custo_estimado": 60},
+            {"item": "Filtro de ar", "detalhe": "Original", "custo_estimado": 70},
+            {"item": "Todos os fluidos", "detalhe": "Freio + arrefecimento + CVT", "custo_estimado": 400},
+            {"item": "Pastilhas", "detalhe": "Dianteiras e traseiras", "custo_estimado": 250}
+          ],
+          "itens_conferir": [
+            {"item": "Revisão geral", "detalhe": "60 pontos Honda"},
+            {"item": "Motor turbo", "detalhe": "Compressão e turbo"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chevrolet-tracker",
+      "marca": "Chevrolet",
+      "modelo": "Tracker",
+      "categoria": "suv",
+      "ano_inicio": 2020,
+      "ano_fim": 2026,
+      "checklists": [
+        {
+          "km": 10000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 Dexos, 4.5L", "custo_estimado": 190},
+            {"item": "Filtro de óleo", "detalhe": "Original GM", "custo_estimado": 55}
+          ],
+          "itens_conferir": [
+            {"item": "Fluidos", "detalhe": "Níveis"},
+            {"item": "Pneus", "detalhe": "35 PSI"},
+            {"item": "Iluminação", "detalhe": "LED"}
+          ]
+        },
+        {
+          "km": 20000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 Dexos, 4.5L", "custo_estimado": 190},
+            {"item": "Filtro de óleo", "detalhe": "Original GM", "custo_estimado": 55},
+            {"item": "Filtro de ar", "detalhe": "Original GM", "custo_estimado": 70},
+            {"item": "Filtro de cabine", "detalhe": "Carvão ativado", "custo_estimado": 50}
+          ],
+          "itens_conferir": [
+            {"item": "Pastilhas", "detalhe": "SUV: desgaste"},
+            {"item": "Correia", "detalhe": "Auxiliar"}
+          ]
+        },
+        {
+          "km": 30000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 Dexos, 4.5L", "custo_estimado": 190},
+            {"item": "Filtro de óleo", "detalhe": "Original GM", "custo_estimado": 55},
+            {"item": "Fluido de freio", "detalhe": "DOT 4", "custo_estimado": 90}
+          ],
+          "itens_conferir": [
+            {"item": "Velas", "detalhe": "Motor turbo"},
+            {"item": "Suspensão", "detalhe": "SUV"}
+          ]
+        },
+        {
+          "km": 40000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 Dexos, 4.5L", "custo_estimado": 190},
+            {"item": "Filtro de óleo", "detalhe": "Original GM", "custo_estimado": 55},
+            {"item": "Filtro de ar", "detalhe": "Original GM", "custo_estimado": 70},
+            {"item": "Velas de ignição", "detalhe": "Motor turbo: troca", "custo_estimado": 180},
+            {"item": "Óleo da transmissão", "detalhe": "Automática: troca", "custo_estimado": 350}
+          ],
+          "itens_conferir": [
+            {"item": "Corrente distribuição", "detalhe": "Motor corrente"},
+            {"item": "Turbo", "detalhe": "Funcionamento"}
+          ]
+        },
+        {
+          "km": 50000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 Dexos, 4.5L", "custo_estimado": 190},
+            {"item": "Filtro de óleo", "detalhe": "Original GM", "custo_estimado": 55},
+            {"item": "Fluido de arrefecimento", "detalhe": "Troca", "custo_estimado": 120},
+            {"item": "Pastilhas dianteiras", "detalhe": "SUV: troca provável", "custo_estimado": 220}
+          ],
+          "itens_conferir": [
+            {"item": "Discos de freio", "detalhe": "SUV"},
+            {"item": "Bomba d'água", "detalhe": "Vazamentos"}
+          ]
+        },
+        {
+          "km": 60000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "5W-30 Dexos, 4.5L", "custo_estimado": 190},
+            {"item": "Filtro de óleo", "detalhe": "Original GM", "custo_estimado": 55},
+            {"item": "Filtro de ar", "detalhe": "Original GM", "custo_estimado": 70},
+            {"item": "Todos os fluidos", "detalhe": "Freio + arrefecimento + transmissão", "custo_estimado": 380},
+            {"item": "Corrente distribuição", "detalhe": "Conferir alongamento", "custo_estimado": 600}
+          ],
+          "itens_conferir": [
+            {"item": "Revisão geral", "detalhe": "60 pontos Chevrolet"},
+            {"item": "Motor turbo", "detalhe": "Compressão"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jeep-compass",
+      "marca": "Jeep",
+      "modelo": "Compass",
+      "categoria": "suv",
+      "ano_inicio": 2018,
+      "ano_fim": 2026,
+      "checklists": [
+        {
+          "km": 10000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "0W-30 sintético, 5L (diesel: 5W-30)", "custo_estimado": 240},
+            {"item": "Filtro de óleo", "detalhe": "Original Jeep/Mopar", "custo_estimado": 70}
+          ],
+          "itens_conferir": [
+            {"item": "Fluidos", "detalhe": "Freio, arrefecimento"},
+            {"item": "Pneus", "detalhe": "36 PSI"},
+            {"item": "Iluminação", "detalhe": "LED"}
+          ]
+        },
+        {
+          "km": 20000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "0W-30 sintético, 5L", "custo_estimado": 240},
+            {"item": "Filtro de óleo", "detalhe": "Mopar", "custo_estimado": 70},
+            {"item": "Filtro de ar", "detalhe": "Mopar", "custo_estimado": 85},
+            {"item": "Filtro de cabine", "detalhe": "Carvão ativado", "custo_estimado": 60}
+          ],
+          "itens_conferir": [
+            {"item": "Pastilhas", "detalhe": "SUV pesado: desgaste"},
+            {"item": "Correia", "detalhe": "Auxiliar"}
+          ]
+        },
+        {
+          "km": 30000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "0W-30 sintético, 5L", "custo_estimado": 240},
+            {"item": "Filtro de óleo", "detalhe": "Mopar", "custo_estimado": 70},
+            {"item": "Fluido de freio", "detalhe": "DOT 4", "custo_estimado": 100}
+          ],
+          "itens_conferir": [
+            {"item": "Velas", "detalhe": "Motor Tigershark/T270"},
+            {"item": "Suspensão", "detalhe": "Off-road: verificar"}
+          ]
+        },
+        {
+          "km": 40000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "0W-30 sintético, 5L", "custo_estimado": 240},
+            {"item": "Filtro de óleo", "detalhe": "Mopar", "custo_estimado": 70},
+            {"item": "Filtro de ar", "detalhe": "Mopar", "custo_estimado": 85},
+            {"item": "Velas de ignição", "detalhe": "4 unidades", "custo_estimado": 200},
+            {"item": "Óleo da transmissão", "detalhe": "Automática 9 marchas: troca", "custo_estimado": 500}
+          ],
+          "itens_conferir": [
+            {"item": "Corrente distribuição", "detalhe": "Motor corrente"},
+            {"item": "Diferencial (4x4)", "detalhe": "Óleo"}
+          ]
+        },
+        {
+          "km": 50000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "0W-30 sintético, 5L", "custo_estimado": 240},
+            {"item": "Filtro de óleo", "detalhe": "Mopar", "custo_estimado": 70},
+            {"item": "Fluido de arrefecimento", "detalhe": "Troca", "custo_estimado": 140},
+            {"item": "Pastilhas dianteiras", "detalhe": "SUV: troca provável", "custo_estimado": 280}
+          ],
+          "itens_conferir": [
+            {"item": "Discos de freio", "detalhe": "Peso elevado"},
+            {"item": "Amortecedores", "detalhe": "Off-road"}
+          ]
+        },
+        {
+          "km": 60000,
+          "itens_substituir": [
+            {"item": "Óleo do motor", "detalhe": "0W-30 sintético, 5L", "custo_estimado": 240},
+            {"item": "Filtro de óleo", "detalhe": "Mopar", "custo_estimado": 70},
+            {"item": "Filtro de ar", "detalhe": "Mopar", "custo_estimado": 85},
+            {"item": "Todos os fluidos", "detalhe": "Freio + arrefecimento + transmissão + diferencial", "custo_estimado": 550},
+            {"item": "Corrente distribuição", "detalhe": "Conferir alongamento", "custo_estimado": 800}
+          ],
+          "itens_conferir": [
+            {"item": "Revisão geral", "detalhe": "60 pontos Jeep"},
+            {"item": "Motor e turbo", "detalhe": "Compressão"}
+          ]
+        }
+      ]
+    }
+  ]
+}

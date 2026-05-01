@@ -1,8 +1,8 @@
 'use client'
 import { motion } from 'framer-motion'
-import { LayoutDashboard, Users, Wrench, Package, FileText, Settings, X, Zap, Camera, ThumbsUp } from 'lucide-react'
+import { LayoutDashboard, Users, Wrench, Package, FileText, Settings, X, Zap, Camera, ThumbsUp, BookOpen } from 'lucide-react'
 
-type Page = 'dashboard' | 'crm' | 'os' | 'estoque' | 'templates' | 'config' | 'registro' | 'aprovacoes'
+type Page = 'dashboard' | 'crm' | 'os' | 'estoque' | 'templates' | 'config' | 'registro' | 'aprovacoes' | 'manuais'
 
 interface SidebarProps { currentPage: Page; onNavigate: (page: Page) => void; mobileOpen: boolean; onMobileClose: () => void }
 
@@ -12,6 +12,7 @@ const menuItems: { id: Page; label: string; icon: any; badge?: string; badgeClas
   { id: 'os', label: 'Ordens de Serviço', icon: Wrench },
   { id: 'registro', label: '📸 Registrar Serviço', icon: Camera, badge: 'FOTO/VIDEO', badgeClass: 'from-green-500 to-emerald-500' },
   { id: 'aprovacoes', label: '✅ Aprovações', icon: ThumbsUp, badge: 'NOVO', badgeClass: 'from-green-500 to-emerald-500' },
+  { id: 'manuais', label: '📚 Manuais', icon: BookOpen, badge: 'NOVO', badgeClass: 'from-blue-500 to-cyan-500' },
   { id: 'estoque', label: 'Estoque', icon: Package },
   { id: 'templates', label: 'Templates', icon: FileText },
   { id: 'config', label: 'Configurações', icon: Settings },
@@ -46,7 +47,7 @@ export default function Sidebar({ currentPage, onNavigate, mobileOpen, onMobileC
       </nav>
       <div className="p-4 border-t border-slate-800">
         <div className="glass rounded-xl p-4 space-y-3">
-          <div className="flex items-center gap-2 text-xs text-slate-400"><Zap className="w-4 h-4 text-amber-500" /><span className="font-bold uppercase tracking-wider">77 Pro v1.2</span></div>
+          <div className="flex items-center gap-2 text-xs text-slate-400"><Zap className="w-4 h-4 text-amber-500" /><span className="font-bold uppercase tracking-wider">77 Pro v1.3</span></div>
           <div className="text-[10px] text-slate-600">© 2026 77 Car Service</div>
         </div>
       </div>
