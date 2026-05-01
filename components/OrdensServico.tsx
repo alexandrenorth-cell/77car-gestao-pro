@@ -2,7 +2,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Plus, Search, Download, Wrench, Clock, CheckCircle, XCircle, Printer, Camera } from 'lucide-react'
-import RegistroServico from './RegistroServico'
 
 interface OS { id: string; cliente: string; veiculo: string; placa: string; servico: string; status: 'em_andamento' | 'concluido' | 'aguardando' | 'cancelado'; valor: string; entrada: string; prazo: string; tecnico: string }
 
@@ -21,10 +20,13 @@ const osMock: OS[] = [
   { id: '#073', cliente: 'Marcos Vinicius', veiculo: 'Toyota Corolla 2024', placa: 'MNO-7890', servico: 'Troca de óleo e filtros', status: 'concluido', valor: 'R$ 450', entrada: '25/04/2026', prazo: '25/04/2026', tecnico: 'Anderson Alves' },
 ]
 
+function navegarParaRegistro() {
+  window.dispatchEvent(new CustomEvent('navigate', { detail: 'registro' }))
+}
+
 export default function OrdensServico() {
   const [search, setSearch] = useState('')
   const [statusFilter, setStatusFilter] = useState<string>('todos')
-  const [selectedOS, setSelectedOS] = useState<OS | null>(null)
 
   const filtered = osMock.filter(os => {
     const matchSearch = os.cliente.toLowerCase().includes(search.toLowerCase()) || os.id.toLowerCase().includes(search.toLowerCase()) || os.placa.toLowerCase().includes(search.toLowerCase())
@@ -71,7 +73,7 @@ export default function OrdensServico() {
                   <div className="text-right"><p className="text-2xl font-black text-green-400">{os.valor}</p></div>
                   <div className="flex items-center gap-2">
                     <button
-                      onClick={(e) => { e.stopPropagation(); setSelectedOS(os); }}
+                      onClick={(e) => { e.stopPropagation(); navegarParaRegistro() }}
                       className="p-2.5 bg-blue-600/10 hover:bg-blue-600/30 rounded-xl transition border border-blue-500/20 hover:border-blue-500/50 group-hover:scale-110"
                       title="📸 Registrar Serviço (Foto/Vídeo + WhatsApp)"
                     >
@@ -92,21 +94,6 @@ export default function OrdensServico() {
         <div className="card-77 text-center"><p className="text-3xl font-black text-amber-400">{osMock.filter(o => o.status === 'em_andamento' || o.status === 'aguardando').length}</p><p className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Em Aberto</p></div>
         <div className="card-77 text-center"><p className="text-3xl font-black text-white">R$ 5.680</p><p className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Faturamento Mês</p></div>
       </div>
-
-      {/* Modal: Registro de Serviço (Câmera + WhatsApp) */}
-      {selectedOS && (
-        <RegistroServico
-          osId={selectedOS.id}
-          cliente={selectedOS.cliente}
-          veiculo={selectedOS.veiculo}
-          placa={selectedOS.placa}
-          servico={selectedOS.servico}
-          valor={selectedOS.valor}
-          tecnico={selectedOS.tecnico}
-          clientePhone=""
-          onClose={() => setSelectedOS(null)}
-        />
-      )}
     </div>
   )
 }
