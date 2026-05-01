@@ -1,9 +1,11 @@
 'use client'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Plus, Search, Download, Wrench, Clock, CheckCircle, XCircle, Printer, Camera } from 'lucide-react'
+import { Plus, Search, Download, Wrench, Clock, CheckCircle, XCircle, Printer, Camera, Send } from 'lucide-react'
+import RegistroServico from './RegistroServico'
+import AprovacaoOrcamento from './AprovacaoOrcamento'
 
-interface OS { id: string; cliente: string; veiculo: string; placa: string; servico: string; status: 'em_andamento' | 'concluido' | 'aguardando' | 'cancelado'; valor: string; entrada: string; prazo: string; tecnico: string }
+interface OS { id: string; cliente: string; veiculo: string; placa: string; servico: string; status: 'em_andamento' | 'concluido' | 'aguardando' | 'cancelado'; valor: string; entrada: string; prazo: string; tecnico: string; phone?: string }
 
 const statusConfig = {
   em_andamento: { label: 'Em Andamento', icon: Wrench, className: 'badge-blue' },
@@ -13,20 +15,18 @@ const statusConfig = {
 }
 
 const osMock: OS[] = [
-  { id: '#077', cliente: 'Carlos Eduardo Silva', veiculo: 'BMW X1 2022', placa: 'ABC-1234', servico: 'Revisão 40.000km completa', status: 'em_andamento', valor: 'R$ 2.350', entrada: '29/04/2026', prazo: '02/05/2026', tecnico: 'Anderson Alves' },
-  { id: '#076', cliente: 'Ana Paula Costa', veiculo: 'VW T-Cross 2023', placa: 'DEF-5678', servico: 'Troca de pastilhas dianteiras', status: 'concluido', valor: 'R$ 890', entrada: '28/04/2026', prazo: '28/04/2026', tecnico: 'Anderson Alves' },
-  { id: '#075', cliente: 'Roberto Lima', veiculo: 'Jeep Compass 2021', placa: 'GHI-9012', servico: 'Diagnóstico elétrico completo', status: 'aguardando', valor: 'R$ 1.670', entrada: '27/04/2026', prazo: '03/05/2026', tecnico: 'Anderson Alves' },
-  { id: '#074', cliente: 'Fernanda Souza', veiculo: 'Honda Civic 2020', placa: 'JKL-3456', servico: 'Alinhamento + Balanceamento', status: 'concluido', valor: 'R$ 320', entrada: '26/04/2026', prazo: '26/04/2026', tecnico: 'Anderson Alves' },
-  { id: '#073', cliente: 'Marcos Vinicius', veiculo: 'Toyota Corolla 2024', placa: 'MNO-7890', servico: 'Troca de óleo e filtros', status: 'concluido', valor: 'R$ 450', entrada: '25/04/2026', prazo: '25/04/2026', tecnico: 'Anderson Alves' },
+  { id: '#077', cliente: 'Carlos Eduardo Silva', veiculo: 'BMW X1 2022', placa: 'ABC-1234', servico: 'Revisão 40.000km completa', status: 'em_andamento', valor: 'R$ 2.350', entrada: '29/04/2026', prazo: '02/05/2026', tecnico: 'Anderson Alves', phone: '31988887777' },
+  { id: '#076', cliente: 'Ana Paula Costa', veiculo: 'VW T-Cross 2023', placa: 'DEF-5678', servico: 'Troca de pastilhas dianteiras', status: 'concluido', valor: 'R$ 890', entrada: '28/04/2026', prazo: '28/04/2026', tecnico: 'Anderson Alves', phone: '31977776666' },
+  { id: '#075', cliente: 'Roberto Lima', veiculo: 'Jeep Compass 2021', placa: 'GHI-9012', servico: 'Diagnóstico elétrico completo', status: 'aguardando', valor: 'R$ 1.670', entrada: '27/04/2026', prazo: '03/05/2026', tecnico: 'Anderson Alves', phone: '31966665555' },
+  { id: '#074', cliente: 'Fernanda Souza', veiculo: 'Honda Civic 2020', placa: 'JKL-3456', servico: 'Alinhamento + Balanceamento', status: 'concluido', valor: 'R$ 320', entrada: '26/04/2026', prazo: '26/04/2026', tecnico: 'Anderson Alves', phone: '31955554444' },
+  { id: '#073', cliente: 'Marcos Vinicius', veiculo: 'Toyota Corolla 2024', placa: 'MNO-7890', servico: 'Troca de óleo e filtros', status: 'concluido', valor: 'R$ 450', entrada: '25/04/2026', prazo: '25/04/2026', tecnico: 'Anderson Alves', phone: '31944443333' },
 ]
-
-function navegarParaRegistro() {
-  window.dispatchEvent(new CustomEvent('navigate', { detail: 'registro' }))
-}
 
 export default function OrdensServico() {
   const [search, setSearch] = useState('')
   const [statusFilter, setStatusFilter] = useState<string>('todos')
+  const [selectedOS, setSelectedOS] = useState<OS | null>(null)
+  const [osParaAprovar, setOsParaAprovar] = useState<OS | null>(null)
 
   const filtered = osMock.filter(os => {
     const matchSearch = os.cliente.toLowerCase().includes(search.toLowerCase()) || os.id.toLowerCase().includes(search.toLowerCase()) || os.placa.toLowerCase().includes(search.toLowerCase())
@@ -72,8 +72,17 @@ export default function OrdensServico() {
                   <div className="text-sm"><p className="text-slate-500">Prazo</p><p className="font-bold text-amber-400">{os.prazo}</p></div>
                   <div className="text-right"><p className="text-2xl font-black text-green-400">{os.valor}</p></div>
                   <div className="flex items-center gap-2">
+                    {/* Botão de Aprovação - NOVO! */}
                     <button
-                      onClick={(e) => { e.stopPropagation(); navegarParaRegistro() }}
+                      onClick={(e) => { e.stopPropagation(); setOsParaAprovar(os); }}
+                      className="p-2.5 bg-green-600/10 hover:bg-green-600/30 rounded-xl transition border border-green-500/20 hover:border-green-500/50 group-hover:scale-110"
+                      title="📤 Enviar Orçamento para Aprovação"
+                    >
+                      <Send className="w-4 h-4 text-green-400" />
+                    </button>
+                    {/* Botão de Câmera */}
+                    <button
+                      onClick={(e) => { e.stopPropagation(); setSelectedOS(os); }}
                       className="p-2.5 bg-blue-600/10 hover:bg-blue-600/30 rounded-xl transition border border-blue-500/20 hover:border-blue-500/50 group-hover:scale-110"
                       title="📸 Registrar Serviço (Foto/Vídeo + WhatsApp)"
                     >
@@ -94,6 +103,36 @@ export default function OrdensServico() {
         <div className="card-77 text-center"><p className="text-3xl font-black text-amber-400">{osMock.filter(o => o.status === 'em_andamento' || o.status === 'aguardando').length}</p><p className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Em Aberto</p></div>
         <div className="card-77 text-center"><p className="text-3xl font-black text-white">R$ 5.680</p><p className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Faturamento Mês</p></div>
       </div>
+
+      {/* Modal: Registro de Serviço (Câmera + WhatsApp) */}
+      {selectedOS && (
+        <RegistroServico
+          osId={selectedOS.id}
+          cliente={selectedOS.cliente}
+          veiculo={selectedOS.veiculo}
+          placa={selectedOS.placa}
+          servico={selectedOS.servico}
+          valor={selectedOS.valor}
+          tecnico={selectedOS.tecnico}
+          clientePhone={selectedOS.phone || ''}
+          onClose={() => setSelectedOS(null)}
+        />
+      )}
+
+      {/* Modal: Aprovação de Orçamento - NOVO! */}
+      {osParaAprovar && (
+        <AprovacaoOrcamento
+          osId={osParaAprovar.id}
+          cliente={osParaAprovar.cliente}
+          veiculo={osParaAprovar.veiculo}
+          placa={osParaAprovar.placa}
+          servico={osParaAprovar.servico}
+          valor={osParaAprovar.valor}
+          prazo={osParaAprovar.prazo}
+          clientePhone={osParaAprovar.phone || ''}
+          onClose={() => setOsParaAprovar(null)}
+        />
+      )}
     </div>
   )
 }

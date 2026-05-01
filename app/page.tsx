@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Sidebar from '@/components/Sidebar'
 import Dashboard from '@/components/Dashboard'
 import CRM from '@/components/CRM'
@@ -8,22 +8,13 @@ import Estoque from '@/components/Estoque'
 import Templates from '@/components/Templates'
 import Config from '@/components/Config'
 import RegistroServico from '@/components/RegistroServico'
+import AprovacoesLista from '@/components/AprovacoesLista'
 
-type Page = 'dashboard' | 'crm' | 'os' | 'estoque' | 'templates' | 'config' | 'registro'
+type Page = 'dashboard' | 'crm' | 'os' | 'estoque' | 'templates' | 'config' | 'registro' | 'aprovacoes'
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState<Page>('dashboard')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
-  // Escuta navegação vinda de outros componentes (ex: botão câmera no OrdensServico)
-  useEffect(() => {
-    const handler = (e: Event) => {
-      const detail = (e as CustomEvent).detail as Page
-      if (detail) setCurrentPage(detail)
-    }
-    window.addEventListener('navigate', handler)
-    return () => window.removeEventListener('navigate', handler)
-  }, [])
 
   const renderPage = () => {
     switch (currentPage) {
@@ -34,6 +25,7 @@ export default function Home() {
       case 'templates': return <Templates />
       case 'config': return <Config />
       case 'registro': return <RegistroServico />
+      case 'aprovacoes': return <AprovacoesLista />
       default: return <Dashboard />
     }
   }

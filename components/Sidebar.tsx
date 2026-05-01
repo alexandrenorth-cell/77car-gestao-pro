@@ -1,8 +1,8 @@
 'use client'
 import { motion } from 'framer-motion'
-import { LayoutDashboard, Users, Wrench, Package, FileText, Settings, X, Zap, Camera } from 'lucide-react'
+import { LayoutDashboard, Users, Wrench, Package, FileText, Settings, X, Zap, Camera, ThumbsUp } from 'lucide-react'
 
-type Page = 'dashboard' | 'crm' | 'os' | 'estoque' | 'templates' | 'config' | 'registro'
+type Page = 'dashboard' | 'crm' | 'os' | 'estoque' | 'templates' | 'config' | 'registro' | 'aprovacoes'
 
 interface SidebarProps { currentPage: Page; onNavigate: (page: Page) => void; mobileOpen: boolean; onMobileClose: () => void }
 
@@ -11,6 +11,7 @@ const menuItems: { id: Page; label: string; icon: any; badge?: string; badgeClas
   { id: 'crm', label: 'CRM / Clientes', icon: Users, badge: 'NOVO' },
   { id: 'os', label: 'Ordens de Serviço', icon: Wrench },
   { id: 'registro', label: '📸 Registrar Serviço', icon: Camera, badge: 'FOTO/VIDEO', badgeClass: 'from-green-500 to-emerald-500' },
+  { id: 'aprovacoes', label: '✅ Aprovações', icon: ThumbsUp, badge: 'NOVO', badgeClass: 'from-green-500 to-emerald-500' },
   { id: 'estoque', label: 'Estoque', icon: Package },
   { id: 'templates', label: 'Templates', icon: FileText },
   { id: 'config', label: 'Configurações', icon: Settings },
@@ -45,7 +46,7 @@ export default function Sidebar({ currentPage, onNavigate, mobileOpen, onMobileC
       </nav>
       <div className="p-4 border-t border-slate-800">
         <div className="glass rounded-xl p-4 space-y-3">
-          <div className="flex items-center gap-2 text-xs text-slate-400"><Zap className="w-4 h-4 text-amber-500" /><span className="font-bold uppercase tracking-wider">77 Pro v1.1</span></div>
+          <div className="flex items-center gap-2 text-xs text-slate-400"><Zap className="w-4 h-4 text-amber-500" /><span className="font-bold uppercase tracking-wider">77 Pro v1.2</span></div>
           <div className="text-[10px] text-slate-600">© 2026 77 Car Service</div>
         </div>
       </div>
