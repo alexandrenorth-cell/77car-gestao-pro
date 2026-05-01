@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Sidebar from '@/components/Sidebar'
 import Dashboard from '@/components/Dashboard'
 import CRM from '@/components/CRM'
@@ -14,6 +14,16 @@ type Page = 'dashboard' | 'crm' | 'os' | 'estoque' | 'templates' | 'config' | 'r
 export default function Home() {
   const [currentPage, setCurrentPage] = useState<Page>('dashboard')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  // Escuta navegação vinda de outros componentes (ex: botão câmera no OrdensServico)
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const detail = (e as CustomEvent).detail as Page
+      if (detail) setCurrentPage(detail)
+    }
+    window.addEventListener('navigate', handler)
+    return () => window.removeEventListener('navigate', handler)
+  }, [])
 
   const renderPage = () => {
     switch (currentPage) {
