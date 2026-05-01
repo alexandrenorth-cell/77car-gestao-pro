@@ -7,8 +7,9 @@ import OrdensServico from '@/components/OrdensServico'
 import Estoque from '@/components/Estoque'
 import Templates from '@/components/Templates'
 import Config from '@/components/Config'
+import RegistroServico from '@/components/RegistroServico'
 
-type Page = 'dashboard' | 'crm' | 'os' | 'estoque' | 'templates' | 'config'
+type Page = 'dashboard' | 'crm' | 'os' | 'estoque' | 'templates' | 'config' | 'registro'
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState<Page>('dashboard')
@@ -22,6 +23,7 @@ export default function Home() {
       case 'estoque': return <Estoque />
       case 'templates': return <Templates />
       case 'config': return <Config />
+      case 'registro': return <RegistroServico />
       default: return <Dashboard />
     }
   }

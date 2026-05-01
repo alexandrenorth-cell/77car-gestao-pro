@@ -1,15 +1,16 @@
 'use client'
 import { motion } from 'framer-motion'
-import { LayoutDashboard, Users, Wrench, Package, FileText, Settings, X, Zap } from 'lucide-react'
+import { LayoutDashboard, Users, Wrench, Package, FileText, Settings, X, Zap, Camera } from 'lucide-react'
 
-type Page = 'dashboard' | 'crm' | 'os' | 'estoque' | 'templates' | 'config'
+type Page = 'dashboard' | 'crm' | 'os' | 'estoque' | 'templates' | 'config' | 'registro'
 
 interface SidebarProps { currentPage: Page; onNavigate: (page: Page) => void; mobileOpen: boolean; onMobileClose: () => void }
 
-const menuItems: { id: Page; label: string; icon: any; badge?: string }[] = [
+const menuItems: { id: Page; label: string; icon: any; badge?: string; badgeClass?: string }[] = [
   { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { id: 'crm', label: 'CRM / Clientes', icon: Users, badge: 'NOVO' },
   { id: 'os', label: 'Ordens de Serviço', icon: Wrench },
+  { id: 'registro', label: '📸 Registrar Serviço', icon: Camera, badge: 'FOTO/VIDEO', badgeClass: 'from-green-500 to-emerald-500' },
   { id: 'estoque', label: 'Estoque', icon: Package },
   { id: 'templates', label: 'Templates', icon: FileText },
   { id: 'config', label: 'Configurações', icon: Settings },
@@ -36,7 +37,7 @@ export default function Sidebar({ currentPage, onNavigate, mobileOpen, onMobileC
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 group ${isActive ? 'bg-blue-600/20 text-blue-400 border border-blue-500/30 shadow-lg shadow-blue-600/10' : 'text-slate-400 hover:text-white hover:bg-slate-800/50 border border-transparent'}`}>
               <Icon className={`w-5 h-5 ${isActive ? 'text-blue-400' : 'text-slate-500 group-hover:text-slate-300'}`} />
               <span className="flex-1 text-left">{item.label}</span>
-              {item.badge && <span className="text-[9px] font-black bg-gradient-to-r from-amber-500 to-orange-500 text-black px-2 py-0.5 rounded-full uppercase tracking-wider">{item.badge}</span>}
+              {item.badge && <span className={`text-[9px] font-black bg-gradient-to-r ${item.badgeClass || 'from-amber-500 to-orange-500'} text-black px-2 py-0.5 rounded-full uppercase tracking-wider`}>{item.badge}</span>}
               {isActive && <motion.div layoutId="activeIndicator" className="w-1.5 h-1.5 rounded-full bg-blue-400" />}
             </button>
           )
@@ -44,7 +45,7 @@ export default function Sidebar({ currentPage, onNavigate, mobileOpen, onMobileC
       </nav>
       <div className="p-4 border-t border-slate-800">
         <div className="glass rounded-xl p-4 space-y-3">
-          <div className="flex items-center gap-2 text-xs text-slate-400"><Zap className="w-4 h-4 text-amber-500" /><span className="font-bold uppercase tracking-wider">77 Pro v1.0</span></div>
+          <div className="flex items-center gap-2 text-xs text-slate-400"><Zap className="w-4 h-4 text-amber-500" /><span className="font-bold uppercase tracking-wider">77 Pro v1.1</span></div>
           <div className="text-[10px] text-slate-600">© 2026 77 Car Service</div>
         </div>
       </div>

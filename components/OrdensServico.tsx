@@ -1,7 +1,9 @@
 'use client'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Plus, Search, Download, Wrench, Clock, CheckCircle, XCircle, Printer } from 'lucide-react'
+import { Plus, Search, Download, Wrench, Clock, CheckCircle, XCircle, Printer, Camera } from 'lucide-react'
+
+const PWA_URL = 'https://jarvis-magic-napkin-0srak.vercel.app'
 
 interface OS { id: string; cliente: string; veiculo: string; placa: string; servico: string; status: 'em_andamento' | 'concluido' | 'aguardando' | 'cancelado'; valor: string; entrada: string; prazo: string; tecnico: string }
 
@@ -16,9 +18,24 @@ const osMock: OS[] = [
   { id: '#077', cliente: 'Carlos Eduardo Silva', veiculo: 'BMW X1 2022', placa: 'ABC-1234', servico: 'Revisão 40.000km completa', status: 'em_andamento', valor: 'R$ 2.350', entrada: '29/04/2026', prazo: '02/05/2026', tecnico: 'Anderson Alves' },
   { id: '#076', cliente: 'Ana Paula Costa', veiculo: 'VW T-Cross 2023', placa: 'DEF-5678', servico: 'Troca de pastilhas dianteiras', status: 'concluido', valor: 'R$ 890', entrada: '28/04/2026', prazo: '28/04/2026', tecnico: 'Anderson Alves' },
   { id: '#075', cliente: 'Roberto Lima', veiculo: 'Jeep Compass 2021', placa: 'GHI-9012', servico: 'Diagnóstico elétrico completo', status: 'aguardando', valor: 'R$ 1.670', entrada: '27/04/2026', prazo: '03/05/2026', tecnico: 'Anderson Alves' },
-  { id: '#074', cliente: 'Fernanda Souza', veiculo: 'Honda Civic 2020', placa: 'JKL-3456', servico: 'Alinhamento 3D + Balanceamento', status: 'concluido', valor: 'R$ 320', entrada: '26/04/2026', prazo: '26/04/2026', tecnico: 'Anderson Alves' },
+  { id: '#074', cliente: 'Fernanda Souza', veiculo: 'Honda Civic 2020', placa: 'JKL-3456', servico: 'Alinhamento + Balanceamento', status: 'concluido', valor: 'R$ 320', entrada: '26/04/2026', prazo: '26/04/2026', tecnico: 'Anderson Alves' },
   { id: '#073', cliente: 'Marcos Vinicius', veiculo: 'Toyota Corolla 2024', placa: 'MNO-7890', servico: 'Troca de óleo e filtros', status: 'concluido', valor: 'R$ 450', entrada: '25/04/2026', prazo: '25/04/2026', tecnico: 'Anderson Alves' },
 ]
+
+function abrirRegistroApp(os: OS) {
+  const osData = {
+    id: os.id,
+    cliente: os.cliente,
+    veiculo: os.veiculo,
+    placa: os.placa,
+    servico: os.servico,
+    valor: os.valor,
+    prazo: os.prazo,
+    whatsapp: '5531999999999'
+  }
+  const osJson = encodeURIComponent(JSON.stringify(osData))
+  window.open(`${PWA_URL}?os=${osJson}`, '_blank')
+}
 
 export default function OrdensServico() {
   const [search, setSearch] = useState('')
@@ -67,7 +84,10 @@ export default function OrdensServico() {
                   <div className="text-sm"><p className="text-slate-500">Entrada</p><p className="font-bold">{os.entrada}</p></div>
                   <div className="text-sm"><p className="text-slate-500">Prazo</p><p className="font-bold text-amber-400">{os.prazo}</p></div>
                   <div className="text-right"><p className="text-2xl font-black text-green-400">{os.valor}</p></div>
-                  <button className="p-2 hover:bg-slate-700 rounded-lg transition opacity-0 group-hover:opacity-100"><Printer className="w-4 h-4" /></button>
+                  <div className="flex items-center gap-2">
+                    <button onClick={(e) => { e.stopPropagation(); abrirRegistroApp(os); }} className="p-2 hover:bg-tech-blue/20 rounded-lg transition opacity-0 group-hover:opacity-100" title="Registrar serviço (foto/vídeo)"><Camera className="w-4 h-4 text-blue-400" /></button>
+                    <button className="p-2 hover:bg-slate-700 rounded-lg transition opacity-0 group-hover:opacity-100"><Printer className="w-4 h-4" /></button>
+                  </div>
                 </div>
               </div>
             </motion.div>
