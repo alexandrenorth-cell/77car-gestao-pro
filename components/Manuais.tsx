@@ -1,7 +1,7 @@
 'use client'
 import { useState, useMemo, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Search, Wrench, Eye, ChevronDown, AlertTriangle, CheckCircle2, DollarSign, ExternalLink, BookOpen, ArrowRight, ArrowUpRight, Send, User, Phone, ShoppingCart, X, MessageCircle, ClipboardCheck, CheckSquare, Square } from 'lucide-react'
+import { Search, Wrench, Eye, ChevronDown, AlertTriangle, CheckCircle2, DollarSign, ExternalLink, BookOpen, ArrowRight, ArrowUpRight, Send, User, Phone, ShoppingCart, X, MessageCircle, ClipboardCheck, CheckSquare, Square, Copy, Check, Star, Sparkles } from 'lucide-react'
 
 // ============================================================
 // 📚 BASE DE DADOS DE MANUTENÇÃO PREVENTIVA (7 MARCAS TOP BR)
@@ -23,7 +23,64 @@ interface DadosKm {
 }
 
 // ⚙️ CONFIGURAÇÃO: Número do WhatsApp da 77 Car Service (DDI+DDD+Número)
-const WHATSAPP_77CAR = '5511999999999' // ⚠️ ALTERE AQUI para o número oficial
+// ⚠️ ANDERSON: Quando tiver o número do celular extra, me fala que eu atualizo em 30s!
+const WHATSAPP_77CAR = '5511999999999' // PLACEHOLDER — AGUARDANDO NÚMERO OFICIAL
+
+// ============================================================
+// 💰 PACOTES DE SERVIÇO (Preços definidos pelo Anderson)
+// ============================================================
+
+interface PacoteInfo {
+  id: 'basica' | 'recomendada' | 'avancada'
+  nome: string
+  icone: string
+  descricao: string
+  extras: string[]
+  custoExtra: number
+  cor: string
+  corBg: string
+  corBorder: string
+  corTexto: string
+}
+
+const PACOTES: Record<string, PacoteInfo> = {
+  basica: {
+    id: 'basica',
+    nome: 'BÁSICA',
+    icone: '🥉',
+    descricao: 'Apenas itens do Manual de Manutenção',
+    extras: [],
+    custoExtra: 0,
+    cor: 'from-slate-500 to-slate-600',
+    corBg: 'bg-slate-500/10',
+    corBorder: 'border-slate-500/20',
+    corTexto: 'text-slate-400',
+  },
+  recomendada: {
+    id: 'recomendada',
+    nome: 'RECOMENDADA',
+    icone: '🥈',
+    descricao: 'Básica + Alinhamento, Balanceamento, Higienização Ar e Oxisanitização',
+    extras: ['Alinhamento (4 rodas)', 'Balanceamento (4 rodas)', 'Higienização ar-condicionado', 'Oxisanitização'],
+    custoExtra: 450,
+    cor: 'from-blue-600 to-cyan-600',
+    corBg: 'bg-blue-500/10',
+    corBorder: 'border-blue-500/30',
+    corTexto: 'text-blue-400',
+  },
+  avancada: {
+    id: 'avancada',
+    nome: 'AVANÇADA',
+    icone: '🥇',
+    descricao: 'Recomendada + Lavagem Detalhada Completa',
+    extras: ['Alinhamento (4 rodas)', 'Balanceamento (4 rodas)', 'Higienização ar-condicionado', 'Oxisanitização', 'Lavagem detalhada completa (interna + externa + cera)'],
+    custoExtra: 590,
+    cor: 'from-amber-500 to-orange-500',
+    corBg: 'bg-amber-500/10',
+    corBorder: 'border-amber-500/30',
+    corTexto: 'text-amber-400',
+  },
+}
 
 const DADOS_UNIVERSAIS: Record<number, ItemManutencao[]> = {
   10000: [
@@ -135,9 +192,11 @@ export default function Manuais() {
 
   // Estados do orçamento
   const [itensSelecionados, setItensSelecionados] = useState<Set<string>>(new Set())
+  const [pacoteSelecionado, setPacoteSelecionado] = useState<'basica' | 'recomendada' | 'avancada'>('basica')
   const [nomeCliente, setNomeCliente] = useState('')
   const [telefoneCliente, setTelefoneCliente] = useState('')
   const [mostrarPainelOrcamento, setMostrarPainelOrcamento] = useState(false)
+  const [copiado, setCopiado] = useState(false)
 
   const modelosDisponiveis = useMemo(() => {
     const marca = MARCAS.find(m => m.nome === marcaSelecionada)
@@ -163,6 +222,7 @@ export default function Manuais() {
     if (marcaSelecionada && modeloSelecionado && kmSelecionado) {
       setResultadoVisivel(true)
       setItensSelecionados(new Set())
+      setPacoteSelecionado('basica')
       setMostrarPainelOrcamento(false)
     }
   }
@@ -187,6 +247,7 @@ export default function Manuais() {
 
   const limparSelecao = useCallback(() => {
     setItensSelecionados(new Set())
+    setPacoteSelecionado('basica')
   }, [])
 
   const itensSelecionadosArray = useMemo(() => {
@@ -194,9 +255,12 @@ export default function Manuais() {
     return dadosManutencao.itens.filter((_, idx) => itensSelecionados.has(`item-${idx}`))
   }, [dadosManutencao, itensSelecionados])
 
-  const totalSelecionado = useMemo(() => {
+  const totalManual = useMemo(() => {
     return itensSelecionadosArray.reduce((acc, i) => acc + (i.custoMedio || 0), 0)
   }, [itensSelecionadosArray])
+
+  const pacoteAtual = PACOTES[pacoteSelecionado]
+  const totalComPacote = totalManual + pacoteAtual.custoExtra
 
   const itensSubstituir = dadosManutencao?.itens.filter(i => i.acao === 'substituir') || []
   const itensConferir = dadosManutencao?.itens.filter(i => i.acao === 'conferir') || []
@@ -212,7 +276,8 @@ export default function Manuais() {
     msg += `👤 *Cliente:* ${nomeCliente || '(não informado)'}\n`
     msg += `📞 *Telefone:* ${telefoneCliente || '(não informado)'}\n\n`
     msg += `🚙 *Veículo:* ${marcaSelecionada} ${modeloSelecionado}\n`
-    msg += `🔢 *Quilometragem:* ${kmSelecionado?.toLocaleString('pt-BR')} km\n\n`
+    msg += `🔢 *Quilometragem:* ${kmSelecionado?.toLocaleString('pt-BR')} km\n`
+    msg += `📦 *Pacote:* ${pacoteAtual.icone} ${pacoteAtual.nome}\n\n`
     
     if (selecionadosSubstituir.length > 0) {
       msg += `🔧 *SERVIÇOS A SUBSTITUIR:*\n`
@@ -230,10 +295,22 @@ export default function Manuais() {
       })
       msg += `\n`
     }
+
+    if (pacoteAtual.extras.length > 0) {
+      msg += `✨ *EXTRAS DO PACOTE ${pacoteAtual.nome}:*\n`
+      pacoteAtual.extras.forEach((extra, idx) => {
+        msg += `  ${idx + 1}. ${extra}\n`
+      })
+      msg += `  💰 Valor extra: ${formatarDinheiro(pacoteAtual.custoExtra)}\n\n`
+    }
     
-    const total = selecionadosSubstituir.reduce((acc, i) => acc + (i.custoMedio || 0), 0)
-    if (total > 0) {
-      msg += `💰 *ESTIMATIVA DOS SERVIÇOS SELECIONADOS:* ${formatarDinheiro(total)}\n\n`
+    const totalSubstituir = selecionadosSubstituir.reduce((acc, i) => acc + (i.custoMedio || 0), 0)
+    if (totalComPacote > 0) {
+      msg += `💰 *ESTIMATIVA TOTAL:* ${formatarDinheiro(totalComPacote)}\n`
+      if (pacoteAtual.custoExtra > 0) {
+        msg += `   (Manual: ${formatarDinheiro(totalSubstituir)} + ${pacoteAtual.nome}: ${formatarDinheiro(pacoteAtual.custoExtra)})\n`
+      }
+      msg += `\n`
     }
     
     msg += `📅 *Gostaria de agendar uma visita?*\n`
@@ -250,6 +327,26 @@ export default function Manuais() {
     const mensagem = gerarMensagemWhatsApp()
     const url = `https://wa.me/${WHATSAPP_77CAR}?text=${encodeURIComponent(mensagem)}`
     window.open(url, '_blank')
+  }
+
+  const copiarOrcamento = async () => {
+    if (itensSelecionadosArray.length === 0) return
+    const mensagem = gerarMensagemWhatsApp()
+    try {
+      await navigator.clipboard.writeText(mensagem)
+      setCopiado(true)
+      setTimeout(() => setCopiado(false), 2000)
+    } catch {
+      // fallback
+      const ta = document.createElement('textarea')
+      ta.value = mensagem
+      document.body.appendChild(ta)
+      ta.select()
+      document.execCommand('copy')
+      document.body.removeChild(ta)
+      setCopiado(true)
+      setTimeout(() => setCopiado(false), 2000)
+    }
   }
 
   const podeEnviar = itensSelecionadosArray.length > 0 && nomeCliente.trim() && telefoneCliente.trim()
@@ -342,7 +439,7 @@ export default function Manuais() {
           </div>
         </motion.div>
 
-        {/* Resultado + Painel de Orçamento (Layout Desktop: Grid 2 colunas) */}
+        {/* Resultado + Painel de Orçamento (Layout Desktop: Grid 3 colunas) */}
         <AnimatePresence>
           {resultadoVisivel && dadosManutencao && (
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ delay: 0.1 }}>
@@ -354,7 +451,7 @@ export default function Manuais() {
                     <h2 className="text-xl font-black italic uppercase">{marcaSelecionada} {modeloSelecionado}</h2>
                     <span className="px-4 py-1.5 bg-blue-600/20 border border-blue-500/30 rounded-full text-blue-400 text-sm font-black">{kmSelecionado?.toLocaleString('pt-BR')} km</span>
                   </div>
-                  <p className="text-xs text-slate-500 mt-1">✅ Selecione os serviços desejados e gere o orçamento via WhatsApp</p>
+                  <p className="text-xs text-slate-500 mt-1">✅ Selecione os serviços, escolha o pacote e gere o orçamento via WhatsApp</p>
                 </div>
                 <div className="flex items-center gap-3 flex-wrap">
                   <button onClick={selecionarTodos}
@@ -368,7 +465,7 @@ export default function Manuais() {
                     Limpar
                   </button>
                   <div className="glass rounded-xl px-4 py-2.5 text-center min-w-[140px]">
-                    <p className="text-[10px] text-slate-400 uppercase tracking-wider font-bold mb-0.5">Est. de Custo Total</p>
+                    <p className="text-[10px] text-slate-400 uppercase tracking-wider font-bold mb-0.5">Est. de Custo Manual</p>
                     <p className="text-lg font-black text-blue-400 italic">
                       {formatarDinheiro(dadosManutencao.estimativaTotal.min)} – {formatarDinheiro(dadosManutencao.estimativaTotal.max)}
                     </p>
@@ -474,12 +571,12 @@ export default function Manuais() {
                     </div>
                     <div>
                       <h3 className="font-black text-green-400 uppercase text-sm">📋 ORÇAMENTO</h3>
-                      <p className="text-[10px] text-green-400/60">{itensSelecionadosArray.length} itens selecionados</p>
+                      <p className="text-[10px] text-green-400/60">{itensSelecionadosArray.length} itens • Pacote {pacoteAtual.nome}</p>
                     </div>
                   </div>
 
                   {/* Itens Selecionados */}
-                  <div className="flex-1 p-4 space-y-2 max-h-[300px] overflow-y-auto">
+                  <div className="flex-1 p-4 space-y-2 max-h-[220px] overflow-y-auto">
                     {itensSelecionadosArray.length === 0 ? (
                       <div className="text-center py-8">
                         <ClipboardCheck className="w-10 h-10 text-slate-600 mx-auto mb-3" />
@@ -510,12 +607,74 @@ export default function Manuais() {
                     )}
                   </div>
 
+                  {/* 🔥 SELETOR DE PACOTE — NOVO! */}
+                  {itensSelecionadosArray.length > 0 && (
+                    <div className="p-4 border-t border-slate-800 space-y-3">
+                      <div className="flex items-center gap-2">
+                        <Sparkles className="w-4 h-4 text-yellow-400" />
+                        <span className="text-xs font-bold uppercase text-slate-400 tracking-wider">Escolha o Pacote</span>
+                      </div>
+                      <div className="grid grid-cols-1 gap-2">
+                        {Object.values(PACOTES).map((pacote) => {
+                          const ativo = pacoteSelecionado === pacote.id
+                          return (
+                            <button
+                              key={pacote.id}
+                              onClick={() => setPacoteSelecionado(pacote.id)}
+                              className={`text-left p-3 rounded-xl border transition-all duration-200 group ${
+                                ativo
+                                  ? `${pacote.corBg} ${pacote.corBorder} shadow-lg`
+                                  : 'border-slate-800 hover:border-slate-700 bg-transparent hover:bg-slate-800/20'
+                              }`}
+                            >
+                              <div className="flex items-center justify-between mb-1">
+                                <div className="flex items-center gap-2">
+                                  <span className="text-lg">{pacote.icone}</span>
+                                  <span className={`text-xs font-black uppercase tracking-wider ${ativo ? pacote.corTexto : 'text-slate-400'}`}>
+                                    {pacote.nome}
+                                  </span>
+                                  {ativo && <Check className="w-3.5 h-3.5 text-green-400" />}
+                                </div>
+                                {pacote.custoExtra > 0 && (
+                                  <span className={`text-sm font-black ${ativo ? pacote.corTexto : 'text-slate-500'}`}>
+                                    +{formatarDinheiro(pacote.custoExtra)}
+                                  </span>
+                                )}
+                              </div>
+                              <p className="text-[10px] text-slate-500 leading-relaxed">{pacote.descricao}</p>
+                              {ativo && pacote.extras.length > 0 && (
+                                <div className="mt-2 pt-2 border-t border-slate-800/50">
+                                  <div className="flex flex-wrap gap-1">
+                                    {pacote.extras.map((extra, idx) => (
+                                      <span key={idx} className="text-[9px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 font-medium">
+                                        {extra}
+                                      </span>
+                                    ))}
+                                  </div>
+                                </div>
+                              )}
+                            </button>
+                          )
+                        })}
+                      </div>
+                    </div>
+                  )}
+
                   {/* Total + Formulário */}
                   <div className="p-4 border-t border-slate-800 space-y-4">
-                    {totalSelecionado > 0 && (
+                    {totalComPacote > 0 && (
                       <div className="flex items-center justify-between p-3 rounded-xl bg-green-500/10 border border-green-500/20">
-                        <span className="text-sm font-bold text-green-400">💰 Estimativa</span>
-                        <span className="text-lg font-black text-green-300 italic">{formatarDinheiro(totalSelecionado)}</span>
+                        <div>
+                          <span className="text-sm font-bold text-green-400">💰 TOTAL</span>
+                          <p className="text-[9px] text-green-400/50">{pacoteAtual.icone} Pacote {pacoteAtual.nome}</p>
+                        </div>
+                        <span className="text-xl font-black text-green-300 italic">{formatarDinheiro(totalComPacote)}</span>
+                      </div>
+                    )}
+
+                    {pacoteAtual.custoExtra > 0 && totalManual > 0 && (
+                      <div className="text-[10px] text-slate-500 text-right">
+                        Manual: {formatarDinheiro(totalManual)} + {pacoteAtual.nome}: {formatarDinheiro(pacoteAtual.custoExtra)}
                       </div>
                     )}
 
@@ -535,13 +694,21 @@ export default function Manuais() {
                       </div>
                     </div>
 
-                    {/* Botão WhatsApp */}
-                    <button onClick={enviarWhatsApp}
-                      disabled={!podeEnviar}
-                      className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white font-black py-3.5 px-6 rounded-xl text-sm uppercase tracking-wider transition-all duration-300 shadow-lg shadow-green-600/20 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2">
-                      <Send className="w-4 h-4" />
-                      ENVIAR ORÇAMENTO VIA WHATSAPP
-                    </button>
+                    {/* Botões de Ação */}
+                    <div className="space-y-2">
+                      <button onClick={enviarWhatsApp}
+                        disabled={!podeEnviar}
+                        className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white font-black py-3.5 px-6 rounded-xl text-sm uppercase tracking-wider transition-all duration-300 shadow-lg shadow-green-600/20 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2">
+                        <Send className="w-4 h-4" />
+                        ENVIAR ORÇAMENTO VIA WHATSAPP
+                      </button>
+                      <button onClick={copiarOrcamento}
+                        disabled={itensSelecionadosArray.length === 0}
+                        className="w-full bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold py-2.5 px-6 rounded-xl text-xs uppercase tracking-wider transition-all duration-300 border border-slate-700 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2">
+                        {copiado ? <Check className="w-3.5 h-3.5 text-green-400" /> : <Copy className="w-3.5 h-3.5" />}
+                        {copiado ? 'COPIADO!' : 'COPIAR ORÇAMENTO'}
+                      </button>
+                    </div>
 
                     <p className="text-[9px] text-slate-600 text-center">
                       Abre o WhatsApp com a mensagem pronta para o cliente
